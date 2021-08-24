@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import AppLoading from 'expo-app-loading';
-import { useFonts, Inter_900Black,Inter_800ExtraBold } from '@expo-google-fonts/inter';
+import { useFonts, Inter_900Black, Inter_800ExtraBold } from '@expo-google-fonts/inter';
 import Constants from 'expo-constants';
 
 export default function App() {
@@ -16,14 +16,23 @@ export default function App() {
     return (
       <View style={styles.screen}>
         <View style={styles.firstRow}>
-          <View style={styles.circle}/>
+          <View style={styles.circle} />
           <View>
-            <Text style={styles.text}>Food For</Text>
-            <Text style={styles.text}>Everyone</Text>
+            <View>
+              <Text style={styles.text}>Food For</Text>
+            </View>
+            <View style={{ top: -25 }}>
+              <Text style={styles.text}>Everyone</Text>
+            </View>
           </View>
         </View>
         <View style={styles.lastRow}>
-          <Button title="Get Started" />
+          {/* <Button title="Get Started" /> */}
+          <TouchableOpacity style={{ backgroundColor: 'white', height: 50, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{color: '#FF4B3A'}}>
+              Get Started
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -32,9 +41,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1, 
+    flex: 1,
     justifyContent: 'space-between',
-    marginTop: Constants.statusBarHeight, 
+    marginTop: Constants.statusBarHeight,
     backgroundColor: '#FF4B3A',
     padding: 42
   },
@@ -46,8 +55,9 @@ const styles = StyleSheet.create({
     marginBottom: 12
   },
   text: {
-    fontSize: 50,
-    fontFamily: 'Inter_800ExtraBold'
+    fontSize: 60,
+    fontFamily: 'Inter_800ExtraBold',
+    color: 'white'
   },
   firstRow: {
 
