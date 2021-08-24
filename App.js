@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity, Dimensions } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Inter_900Black, Inter_800ExtraBold } from '@expo-google-fonts/inter';
 import Constants from 'expo-constants';
+import { LinearGradient } from 'expo-linear-gradient';
+
+const { width, height } = Dimensions.get('window');
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -27,9 +30,14 @@ export default function App() {
           </View>
         </View>
         <View style={styles.lastRow}>
+            <LinearGradient
+              // Background Linear Gradient
+              colors={['rgb(255,76,59)', 'rgb(255,72,18)', 'rgb(255,75,59)']}
+              style={{ width, height: 200, alignItems: 'center', bottom: -45, left: -40 }}
+            />
           {/* <Button title="Get Started" /> */}
           <TouchableOpacity style={{ backgroundColor: 'white', height: 50, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{color: '#FF4B3A'}}>
+            <Text style={{ color: 'rgb(255,75,58)' }}>
               Get Started
             </Text>
           </TouchableOpacity>
@@ -44,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     marginTop: Constants.statusBarHeight,
-    backgroundColor: '#FF4B3A',
+    backgroundColor: 'rgb(255,75,58)',
     padding: 42
   },
   circle: {
