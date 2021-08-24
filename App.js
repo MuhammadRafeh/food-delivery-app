@@ -1,76 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity, Dimensions } from 'react-native';
-import AppLoading from 'expo-app-loading';
-import { useFonts, Inter_900Black, Inter_800ExtraBold } from '@expo-google-fonts/inter';
-import Constants from 'expo-constants';
-import { LinearGradient } from 'expo-linear-gradient';
-
-const { width, height } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import onBoarding from './src/screens/OnBoarding';
 
 export default function App() {
-  let [fontsLoaded] = useFonts({
-    Inter_900Black,
-    Inter_800ExtraBold
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  } else {
-    return (
-      <View style={styles.screen}>
-        <View style={styles.firstRow}>
-          <View style={styles.circle} />
-          <View>
-            <View>
-              <Text style={styles.text}>Food For</Text>
-            </View>
-            <View style={{ top: -25 }}>
-              <Text style={styles.text}>Everyone</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.lastRow}>
-            <LinearGradient
-              // Background Linear Gradient
-              colors={['rgb(255,76,59)', 'rgb(255,72,18)', 'rgb(255,75,59)']}
-              style={{ width, height: 200, alignItems: 'center', bottom: -45, left: -40 }}
-            />
-          {/* <Button title="Get Started" /> */}
-          <TouchableOpacity style={{ backgroundColor: 'white', height: 50, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ color: 'rgb(255,75,58)' }}>
-              Get Started
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
+  return (
+    <NavigationContainer>
+      <onBoarding />
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'space-between',
-    marginTop: Constants.statusBarHeight,
-    backgroundColor: 'rgb(255,75,58)',
-    padding: 42
-  },
-  circle: {
-    width: 50,
-    height: 50,
-    borderRadius: 50,
-    backgroundColor: 'white',
-    marginBottom: 12
-  },
-  text: {
-    fontSize: 60,
-    fontFamily: 'Inter_800ExtraBold',
-    color: 'white'
-  },
-  firstRow: {
-
-  },
-  lastRow: {
-
-  }
 })
