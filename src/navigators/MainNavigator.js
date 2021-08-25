@@ -1,12 +1,14 @@
 import React from 'react';
+import { Image, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Main/Home'
 import Profile from '../screens/Main/Profile'
 import Favourites from '../screens/Main/Favourites'
 import Recents from '../screens/Main/Recents'
-
+import { Ionicons } from '@expo/vector-icons';
+import theme from '../constants/theme';
 const Tab = createBottomTabNavigator();
-
+ <Ionicons  name="ios-menu-sharp" size={32} color="green" /> 
 function MyTabs() {
   return (
     <Tab.Navigator
@@ -25,14 +27,20 @@ function MyTabs() {
         },
         tabBarShowLabel: false,
         headerTitle: '',
-        // headerLeft: () => <
-
+        headerStatusBarHeight: 59,
+        headerLeftContainerStyle: { paddingLeft: 20 },
+        headerLeftContainerStyle: {borderBottomWidth: 0, elevation: 0},
+        headerRightContainerStyle: {borderBottomWidth: 0, elevation: 0},
+        tabBarActiveTintColor: theme.primary,
+        tabBarInactiveTintColor: theme.secondary,
+        headerLeft: () => <Image source={require('../../assets/icons/menu.png')} style={{ height: 20 }} resizeMode={'contain'} />,
+        
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Favorite" component={Favourites} />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Recents" component={Recents} />
+      <Tab.Screen name="Home" component={Home} options={{tabBarIcon: (props) =>  <Ionicons  name="home" size={props.size} color={props.color} /> }} />
+      <Tab.Screen name="Favorite" component={Favourites} options={{tabBarIcon: (props) =>  <Ionicons  name="heart" size={props.size} color={props.color} /> }}/>
+      <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: (props) =>  <Ionicons  name="person" size={props.size} color={props.color} /> }}/>
+      <Tab.Screen name="Recents" component={Recents} options={{tabBarIcon: (props) =>  <Ionicons  name="ios-timer" size={props.size} color={props.color} /> }}/>
     </Tab.Navigator>
   );
 }
