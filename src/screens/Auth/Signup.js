@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 const Signup = props => {
     return (
-        <View style={{backgroundColor: '#F2F2F2', flex: 1}}>
+        <View style={styles.screen}>
             <Text>
                 SignUp
             </Text>
@@ -15,7 +15,8 @@ export default Signup;
 
 const styles = StyleSheet.create({
     screen: {
-        flex: 1
+        flex: 1,
+        backgroundColor: 'rgb(242,242,242)'
     }
 });
 
