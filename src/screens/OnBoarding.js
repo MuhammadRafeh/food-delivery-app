@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const { width } = Dimensions.get('window');
 
-export default function onBoarding() {
+export default function OnBoarding() {
   let [fontsLoaded] = useFonts({
     Inter_900Black,
     Inter_800ExtraBold
