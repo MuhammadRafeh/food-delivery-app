@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const { width } = Dimensions.get('window');
 
-export default function OnBoarding() {
+export default function OnBoarding(props) {
     let [fontsLoaded] = useFonts({
         Inter_900Black,
         Inter_800ExtraBold
@@ -35,7 +35,7 @@ export default function OnBoarding() {
                     style={{ position: 'absolute', width, height: 300, alignItems: 'center', bottom: 57, left: 0, right: 0 }}
                 />
                 <View>
-                    <TouchableOpacity style={{ backgroundColor: 'white', height: 50, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
+                    <TouchableOpacity style={styles.button} onPress={props.setIsShowAuth.bind(null, true)}>
                         <Text style={{ color: 'rgb(255,75,58)' }}>
                             Get Started
                         </Text>
@@ -65,5 +65,12 @@ const styles = StyleSheet.create({
         fontSize: 60,
         fontFamily: 'Inter_800ExtraBold',
         color: 'white'
+    },
+    button: {
+        backgroundColor: 'white', 
+        height: 50, 
+        borderRadius: 20, 
+        justifyContent: 'center', 
+        alignItems: 'center'
     }
 })

@@ -1,13 +1,16 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import OnBoarding from './src/screens/OnBoarding';
+import AuthNavigator from './src/navigators/AuthNavigator';
 
 export default function App() {
+  const [isShowAuth, setIsShowAuth] = useState(false);
   return (
-    <NavigationContainer>
-      <OnBoarding />
-    </NavigationContainer>
+      <NavigationContainer>
+        {!isShowAuth && <OnBoarding setIsShowAuth={setIsShowAuth} />}
+        {isShowAuth && <AuthNavigator />}
+      </NavigationContainer>
   )
 }
 

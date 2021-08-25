@@ -3,7 +3,11 @@ import { Text, View, StyleSheet } from 'react-native';
 
 const Login = props => {
     return (
-        <View/>
+        <View style={{backgroundColor: '#F2F2F2', flex: 1}}>
+            <Text>
+                Login
+            </Text>
+        </View>
     );
 }
 
