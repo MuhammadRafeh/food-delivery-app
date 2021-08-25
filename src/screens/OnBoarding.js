@@ -18,7 +18,7 @@ export default function OnBoarding() {
     } else {
         return (
             <View style={styles.screen}>
-                <View style={styles.firstRow}>
+                <View>
                     <View style={styles.circle} />
                     <View>
                         <View>
@@ -34,7 +34,7 @@ export default function OnBoarding() {
                     colors={['rgb(255,76,59)', 'rgb(255,72,18)', 'rgb(255,74,46)']}
                     style={{ position: 'absolute', width, height: 300, alignItems: 'center', bottom: 57, left: 0, right: 0 }}
                 />
-                <View style={styles.lastRow}>
+                <View>
                     <TouchableOpacity style={{ backgroundColor: 'white', height: 50, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={{ color: 'rgb(255,75,58)' }}>
                             Get Started
@@ -65,11 +65,5 @@ const styles = StyleSheet.create({
         fontSize: 60,
         fontFamily: 'Inter_800ExtraBold',
         color: 'white'
-    },
-    firstRow: {
-
-    },
-    lastRow: {
-
     }
 })
