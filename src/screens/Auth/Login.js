@@ -1,40 +1,52 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Dimensions, ScrollView, KeyboardAvoidingView } from 'react-native';
 const { width } = Dimensions.get('window');
 
 const Login = props => {
     return (
-        <View style={styles.screen}>
-            <View style={styles.firstRow}>
-                <View style={{ flex: 1 }}>
-                    <Text style={styles.inputLableColor}>
-                        Email address
-                    </Text>
-                    <TextInput onChangeText={(val) => { }} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1 }} />
-                </View>
-                <View style={{ flex: 2.3 }}>
-                    <Text style={styles.inputLableColor}>
-                        Password
-                    </Text>
-                    <TextInput onChangeText={(val) => { }} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1 }} />
-                    <View style={{marginTop: 29}}>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.screen}
+        >
+            {/* <View style={styles.screen}> */}
+                <View style={styles.firstRow}>
+                    <View style={{ flex: 1 }}>
+                        <View style={{ height: 25 }}>
+                            <Text style={styles.inputLableColor}>
+                                Email address
+                            </Text>
+                        </View>
+                        <View>
+                            <TextInput onChangeText={(val) => { }} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1, height: 29 }} />
+                        </View>
+                    </View>
+                    <View style={{ flex: 2.3 }}>
+                        <View style={{ height: 25 }}>
+                            <Text style={styles.inputLableColor}>
+                                Password
+                            </Text>
+                        </View>
+                        <View>
+                            <TextInput onChangeText={(val) => { }} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1, height: 29 }} />
+                        </View>
+                        <View style={{ marginTop: 29 }}>
 
-                        <Text style={{ color: 'rgb(250,74,12)', fontWeight: 'bold', fontSize: 15 }}>
-                            Forgot Passcode?
-                        </Text>
+                            <Text style={{ color: 'rgb(250,74,12)', fontWeight: 'bold', fontSize: 15 }}>
+                                Forgot Passcode?
+                            </Text>
+                        </View>
                     </View>
                 </View>
-                {/* <View style={{flex: 1}}>
-                </View> */}
-            </View>
-            <View style={styles.lastRow}>
-                <TouchableOpacity style={styles.button} >
-                    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>
-                        Login
-                    </Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+                <View style={styles.lastRow}>
+                    <TouchableOpacity style={styles.button} >
+                        <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>
+                            Login
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            {/* </View> */}
+        </KeyboardAvoidingView>
+
     );
 }
 
