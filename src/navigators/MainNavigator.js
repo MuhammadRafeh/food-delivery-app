@@ -10,10 +10,24 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-    // screenOptions={{}}
-    // screenOptions={{
-    //   headerBackgroundContainerStyle: 
-    // }}
+      // screenOptions={{}}
+      screenOptions={{
+        headerStyle: { backgroundColor: 'rgb(242,242,242)' },
+        tabBarStyle: {
+          backgroundColor: 'rgb(242,242,242)',
+          paddingBottom: 25,
+          elevation: 0,
+          borderTopWidth: 0,
+          shadowOffset: {
+            width: 0, height: 0 // for iOS
+          },
+          height: 70,
+        },
+        tabBarShowLabel: false,
+        headerTitle: '',
+        // headerLeft: () => <
+
+      }}
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Favorite" component={Favourites} />
