@@ -22,10 +22,10 @@ export default function OnBoarding(props) {
                     <View style={styles.circle} />
                     <View>
                         <View>
-                            <Text style={styles.text}>Food For</Text>
+                            <Text style={styles.text} numberOfLines={1} adjustsFontSizeToFit={true}>Food For</Text>
                         </View>
                         <View style={{ top: -25 }}>
-                            <Text style={styles.text}>Everyone</Text>
+                            <Text style={styles.text} numberOfLines={1} adjustsFontSizeToFit={true}>Everyone</Text>
                         </View>
                     </View>
                 </View>
