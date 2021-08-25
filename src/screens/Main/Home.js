@@ -1,22 +1,27 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 const Home = props => {
     return (
         <View style={styles.screen}>
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1.2 }}>
                 <View>
                     <Text style={styles.label} adjustsFontSizeToFit={true} numberOfLines={1}>
                         Delicious
                     </Text>
-                    <Text style={styles.label}  adjustsFontSizeToFit={true} numberOfLines={1}>
+                    <Text style={[styles.label, { top: -5 }]} adjustsFontSizeToFit={true} numberOfLines={1}>
                         food for you
                     </Text>
                 </View>
-                <View>
+                <View style={{ marginTop: 20, flex: 1 }}>
                     <TextInput
-                        style={{}}
+                        style={{ width: '85%', backgroundColor: 'rgb(239,238,238)', height: 50, borderRadius: 20, paddingLeft: 45, paddingRight: 10 }}
+                        placeholder='Search'
+                        placeholderTextColor="rgb(120,119,119)"
+
                     />
+                    <Ionicons style={styles.searchIcon} name="md-search-outline" size={20} color="black" />
                 </View>
             </View>
             <View style={{ flex: 2 }}>
@@ -39,5 +44,9 @@ const styles = StyleSheet.create({
     label: {
         fontSize: 30,
         fontWeight: 'bold'
+    },
+    searchIcon: {
+        position: 'absolute',
+        padding: 14.2,
     }
 })
