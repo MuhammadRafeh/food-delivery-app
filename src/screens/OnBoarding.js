@@ -32,8 +32,8 @@ export default function OnBoarding() {
         <View style={styles.lastRow}>
             <LinearGradient
               // Background Linear Gradient
-              colors={['rgb(255,76,59)', 'rgb(255,72,18)', 'rgb(255,75,59)']}
-              style={{ width, height: 250, alignItems: 'center', bottom: -45, left: -40 }}
+              colors={['rgb(255,76,59)', 'rgb(255,72,18)', 'rgb(255,74,46)']}//''rgb(255,74,46)'
+              style={{ width, height: 300, alignItems: 'center', bottom: -45, left: -40 }}
             />
           {/* <Button title="Get Started" /> */}
           <TouchableOpacity style={{ backgroundColor: 'white', height: 50, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}>
