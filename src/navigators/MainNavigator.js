@@ -5,14 +5,13 @@ import Home from '../screens/Main/Home'
 import Profile from '../screens/Main/Profile'
 import Favourites from '../screens/Main/Favourites'
 import Recents from '../screens/Main/Recents'
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Feather } from '@expo/vector-icons';
 import theme from '../constants/theme';
 const Tab = createBottomTabNavigator();
  <Ionicons  name="ios-menu-sharp" size={32} color="green" /> 
 function MyTabs() {
   return (
     <Tab.Navigator
-      // screenOptions={{}}
       screenOptions={{
         headerStyle: { backgroundColor: 'rgb(242,242,242)' },
         tabBarStyle: {
@@ -28,13 +27,13 @@ function MyTabs() {
         tabBarShowLabel: false,
         headerTitle: '',
         headerStatusBarHeight: 59,
-        headerLeftContainerStyle: { paddingLeft: 20 },
-        headerLeftContainerStyle: {borderBottomWidth: 0, elevation: 0},
-        headerRightContainerStyle: {borderBottomWidth: 0, elevation: 0},
+        headerLeftContainerStyle: {paddingLeft: 30, borderBottomWidth: 0, elevation: 0},
+        headerRightContainerStyle: {paddingRight: 35, borderBottomWidth: 0},
         tabBarActiveTintColor: theme.primary,
         tabBarInactiveTintColor: theme.secondary,
-        headerLeft: () => <Image source={require('../../assets/icons/menu.png')} style={{ height: 20 }} resizeMode={'contain'} />,
-        
+        // headerTransparent: true,
+        headerLeft: () => <Image source={require('../../assets/icons/menu.png')} style={{ height: 19 }} resizeMode={'contain'} />,
+        headerRight: () => <Feather name={'shopping-cart'} size={28} color={theme.secondary}/>
       }}
     >
       <Tab.Screen name="Home" component={Home} options={{tabBarIcon: (props) =>  <Ionicons  name="home" size={props.size} color={props.color} /> }} />
