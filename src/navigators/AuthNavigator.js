@@ -23,7 +23,7 @@ function MyTabs() {
                         tabBarIndicatorStyle: { width: width/3, backgroundColor: 'rgb(250,74,12)', left: width/12 }
                     }}
                 >
-                    <Tab.Screen name="Login" component={Login} />
+                    <Tab.Screen name="Login" component={Login}/>
                     <Tab.Screen name="Sign-up" component={Signup} />
                 </Tab.Navigator>
             </View>

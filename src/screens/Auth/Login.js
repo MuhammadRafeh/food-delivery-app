@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, Dimensions, ScrollView, KeyboardAvoidingView } from 'react-native';
-const { width } = Dimensions.get('window');
+import Button from '../../components/Button';
+const { width, height } = Dimensions.get('window');
+import { useDispatch } from "react-redux";
+import { authenticate } from '../../redux/actions';
 
 const Login = props => {
+    const dispatch = useDispatch();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     return (
         <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -17,7 +23,7 @@ const Login = props => {
                             </Text>
                         </View>
                         <View>
-                            <TextInput onChangeText={(val) => { }} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1, height: 29 }} />
+                            <TextInput onChangeText={setEmail.bind(null)} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1, height: 29 }} />
                         </View>
                     </View>
                     <View style={{ flex: 2.3 }}>
@@ -27,7 +33,7 @@ const Login = props => {
                             </Text>
                         </View>
                         <View>
-                            <TextInput onChangeText={(val) => { }} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1, height: 29 }} />
+                            <TextInput onChangeText={setPassword.bind(null)} style={{ width: '100%', borderBottomColor: 'rgb(121,121,121)', borderBottomWidth: 1, height: 29 }} />
                         </View>
                         <View style={{ marginTop: 29 }}>
 
@@ -38,11 +44,7 @@ const Login = props => {
                     </View>
                 </View>
                 <View style={styles.lastRow}>
-                    <TouchableOpacity style={styles.button} >
-                        <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>
-                            Login
-                        </Text>
-                    </TouchableOpacity>
+                    <Button label={'Login'} onPress={() => dispatch(authenticate(email, password))}/>
                 </View>
             {/* </View> */}
         </KeyboardAvoidingView>
@@ -63,13 +65,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: width / 12,
         paddingTop: 50,
         justifyContent: 'flex-start'
-    },
-    button: {
-        backgroundColor: 'rgb(250,74,12)',
-        height: 65,
-        borderRadius: 29,
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     lastRow: {
         flex: 1,
