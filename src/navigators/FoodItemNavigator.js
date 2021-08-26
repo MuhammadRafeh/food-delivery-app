@@ -35,8 +35,6 @@ function MyTabs() {
             <Tab.Screen name="Drinks" component={Drinks} />
             <Tab.Screen name="Snacks" component={Snacks} />
             <Tab.Screen name="Sauce" component={Sauce} />
-            <Tab.Screen name="Sauces" component={Sauce} />
-            <Tab.Screen name="Saucse" component={Sauce} />
             {/* <Tab.Screen name="Meat" component={Signup} /> */}
         </Tab.Navigator>
 

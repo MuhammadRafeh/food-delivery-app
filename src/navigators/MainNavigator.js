@@ -30,12 +30,14 @@ function MyTabs() {
         headerRightContainerStyle: { paddingRight: 35, borderBottomWidth: 0 },
         tabBarActiveTintColor: theme.primary,
         tabBarInactiveTintColor: theme.secondary,
-        headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(242,242,242)' },
-        headerLeft: () => <Image source={require('../../assets/icons/menu.png')} style={{ height: 19 }} resizeMode={'contain'} />,
-        headerRight: () => <Feather name={'shopping-cart'} size={28} color={theme.secondary} />
+        headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(242,242,242)' }
       }}
     >
-      <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: (props) => <Ionicons name="home" size={props.size} color={props.color} /> }} />
+      <Tab.Screen name="Home" component={Home} options={{ 
+        tabBarIcon: (props) => <Ionicons name="home" size={props.size} color={props.color} /> ,
+        headerLeft: () => <Image source={require('../../assets/icons/menu.png')} style={{ height: 19 }} resizeMode={'contain'} />,
+        headerRight: () => <Feather name={'shopping-cart'} size={28} color={theme.secondary} />
+        }} />
       <Tab.Screen name="Favorite" component={Favourites} options={{ tabBarIcon: (props) => <Ionicons name="heart" size={props.size} color={props.color} /> }} />
       <Tab.Screen name="Profile" component={Profile} options={{ tabBarIcon: (props) => <Ionicons name="person" size={props.size} color={props.color} /> }} />
       <Tab.Screen name="Recents" component={Recents} options={{ tabBarIcon: (props) => <Ionicons name="ios-timer" size={props.size} color={props.color} /> }} />

@@ -1,16 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
 import theme from '../constants/theme';
+const {width} = Dimensions.get('window');
 
-const FoodItem = props => { //parentDimensions
-    const { parentDimensions, item } = props;
-    console.log('sssssssss',parentDimensions)
-
-    if (parentDimensions.height == null){
-        return <View/>
-    }
+const FoodItem = props => {
+    const { item } = props;
+    
     return (
-        <View style={[styles.card, { width: parentDimensions.height / 1.4, height: parentDimensions.height - 40 }]}>
+        <View style={[styles.card, { width: (width - 41) / 1.68, height: '85%' }]}>
             <View style={{ height: '55%' }}>
 
             </View>
@@ -19,7 +16,7 @@ const FoodItem = props => { //parentDimensions
                     <Text style={{fontWeight: 'bold', fontSize: 18}} numberOfLines={2} adjustsFontSizeToFit={true}>{item.name}</Text>
                 </View>
                 <View>
-                    <Text style={{color: theme.primary}}>${item.price}</Text>
+                    <Text style={{color: theme.primary}} numberOfLines={1} adjustsFontSizeToFit={true}>${item.price}</Text>
                 </View>
             </View>
         </View>

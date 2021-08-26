@@ -1,10 +1,18 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import FoodItemsList from '../../components/FoodItemsList';
+import theme from '../../constants/theme';
+import foodItem from '../../data/Items';
 
 const Snacks = props => {
     return (
-        <View>
-            <Text>Snacks</Text>
+        <View style={styles.screen}>
+            <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center', marginRight: 35 }}>
+                <Text style={{ color: theme.primary }}>see more</Text>
+            </View>
+            <View style={{ flex: 3.5 }}>
+                <FoodItemsList foodItemsList={foodItem}/>
+            </View>
         </View>
     );
 }
@@ -14,8 +22,7 @@ export default Snacks;
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'blue'
+        // backgroundColor: 'blue'
+        // justifyContent: 'space-around'
     }
 });

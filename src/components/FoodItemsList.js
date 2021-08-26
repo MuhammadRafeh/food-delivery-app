@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import FoodItem from './FoodItem';
 
 const FoodItemsList = props => {
@@ -7,7 +7,7 @@ const FoodItemsList = props => {
         <ScrollView horizontal>
             {props.foodItemsList.map((item, key) => {
                 return (
-                    <FoodItem key={key} parentDimensions={props.parentDimensions} item={item}/>
+                    <FoodItem key={key} item={item}/>
                 );
             })}
         </ScrollView>
@@ -15,9 +15,3 @@ const FoodItemsList = props => {
 }
 
 export default FoodItemsList;
-
-// const styles = StyleSheet.create({
-//     screen: {
-
-//     }
-// });
