@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import FoodItemNavigator from '../../navigators/FoodItemNavigator';
 
 const Home = props => {
     return (
@@ -24,8 +25,8 @@ const Home = props => {
                     <Ionicons style={styles.searchIcon} name="md-search-outline" size={20} color="black" />
                 </View>
             </View>
-            <View style={{ flex: 2 }}>
-
+            <View style={{ flex: 2.5 }}>
+                <FoodItemNavigator />
             </View>
 
         </View>
