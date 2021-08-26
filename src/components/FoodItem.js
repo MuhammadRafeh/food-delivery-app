@@ -4,7 +4,11 @@ import theme from '../constants/theme';
 
 const FoodItem = props => { //parentDimensions
     const { parentDimensions, item } = props;
-    console.log(parentDimensions)
+    console.log('sssssssss',parentDimensions)
+
+    if (parentDimensions.height == null){
+        return <View/>
+    }
     return (
         <View style={[styles.card, { width: parentDimensions.height / 1.4, height: parentDimensions.height - 40 }]}>
             <View style={{ height: '55%' }}>

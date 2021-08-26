@@ -7,7 +7,7 @@ const FoodItemsList = props => {
         <ScrollView horizontal>
             {props.foodItemsList.map((item, key) => {
                 return (
-                    <FoodItem parentDimensions={props.parentDimensions} item={item}/>
+                    <FoodItem key={key} parentDimensions={props.parentDimensions} item={item}/>
                 );
             })}
         </ScrollView>

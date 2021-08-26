@@ -5,8 +5,8 @@ import theme from '../../constants/theme';
 import foodItem from '../../data/Items';
 
 const Food = props => {
-    const [foodListHeight, setFoodListHeight] = useState(200);
-    const [foodListWidth, setFoodListWidth] = useState(200);
+    const [foodListHeight, setFoodListHeight] = useState(null);
+    const [foodListWidth, setFoodListWidth] = useState(null);
     return (
         <View style={styles.screen}>
             <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center', marginRight: 35 }}>
