@@ -22,7 +22,7 @@ function MyTabs() {
                     backgroundColor: theme.primary,
                     height: 3,
                     width: (width - 41)/4,
-                    left: (width - 41)/12.6
+                    left: (width - 41)/25
                 },
                 tabBarItemStyle: { width: 100 },
                 tabBarActiveTintColor: theme.primary,
