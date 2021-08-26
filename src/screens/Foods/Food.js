@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import FoodItemsList from '../../components/FoodItemsList';
+import theme from '../../constants/theme';
+import foodItem from '../../data/Items';
 
 const Food = props => {
+    const [foodListHeight, setFoodListHeight] = useState(200);
+    const [foodListWidth, setFoodListWidth] = useState(200);
     return (
         <View style={styles.screen}>
-            <View>
-                <Text>Food</Text>
+            <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center', marginRight: 35 }}>
+                <Text style={{ color: theme.primary }}>see more</Text>
             </View>
-            <ScrollView horizontal>
-                
-            </ScrollView>
+            <View style={{ flex: 3.5 }} onLayout={(e) => {
+                setFoodListHeight(e.nativeEvent.layout.height);
+                setFoodListWidth(e.nativeEvent.layout.width);
+            }}>
+                <FoodItemsList foodItemsList={foodItem} parentDimensions={{width: foodListWidth, height: foodListHeight}}/>
+            </View>
         </View>
     );
 }
@@ -19,9 +27,7 @@ export default Food;
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         // backgroundColor: 'blue'
-        justifyContent: 'space-around'
+        // justifyContent: 'space-around'
     }
 });

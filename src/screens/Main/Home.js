@@ -26,7 +26,7 @@ const Home = props => {
                 </View>
             </View>
             <View style={{ flex: 2.5 }}>
-                <FoodItemNavigator />
+                <FoodItemNavigator/>
             </View>
 
         </View>

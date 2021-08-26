@@ -24,6 +24,7 @@ function MyTabs() {
                     width: (width - 41)/4,
                     left: (width - 41)/12.6
                 },
+                tabBarItemStyle: { width: 100 },
                 tabBarActiveTintColor: theme.primary,
                 tabBarInactiveTintColor: 'rgb(154,154,157)',
                 tabBarStyle: {backgroundColor: 'rgb(242,242,242)', borderBottomWidth: 0, elevation: 0},
