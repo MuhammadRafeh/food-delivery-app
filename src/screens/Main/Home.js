@@ -1,11 +1,14 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput } from 'react-native';
+import { Text, KeyboardAvoidingView, View, StyleSheet, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import FoodItemNavigator from '../../navigators/FoodItemNavigator';
 
 const Home = props => {
     return (
-        <View style={styles.screen}>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.screen}
+        >
             <View style={{ flex: 1.2 }}>
                 <View>
                     <Text style={styles.label} adjustsFontSizeToFit={true} numberOfLines={1}>
@@ -26,10 +29,9 @@ const Home = props => {
                 </View>
             </View>
             <View style={{ flex: 2.5 }}>
-                <FoodItemNavigator/>
+                <FoodItemNavigator />
             </View>
-
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
