@@ -4,7 +4,7 @@ import FoodItem from './FoodItem';
 
 const FoodItemsList = props => {
     return (
-        <ScrollView horizontal>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {props.foodItemsList.map((item, key) => {
                 return (
                     <FoodItem key={key} item={item}/>

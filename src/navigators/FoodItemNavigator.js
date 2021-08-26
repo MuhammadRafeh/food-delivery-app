@@ -27,7 +27,7 @@ function MyTabs() {
                 tabBarItemStyle: { width: 100 },
                 tabBarActiveTintColor: theme.primary,
                 tabBarInactiveTintColor: 'rgb(154,154,157)',
-                tabBarStyle: {backgroundColor: 'rgb(242,242,242)', borderBottomWidth: 0, elevation: 0},
+                tabBarStyle: {backgroundColor: 'rgb(242,242,242)', borderBottomWidth: 0, elevation: 0}
             }}
             sceneContainerStyle={{ backgroundColor: "rgb(242,242,242)" }}
         >
