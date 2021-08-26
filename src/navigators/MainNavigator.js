@@ -31,7 +31,7 @@ function MyTabs() {
         tabBarActiveTintColor: theme.primary,
         tabBarInactiveTintColor: theme.secondary,
         headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(242,242,242)' },
-        tabBarHideOnKeyboard: true
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tab.Screen name="Home" component={Home} options={{ 
