@@ -33,6 +33,7 @@ function MyTabs() {
         headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(242,242,242)' },
         tabBarHideOnKeyboard: true,
       }}
+
     >
       <Tab.Screen name="Home" component={Home} options={{ 
         tabBarIcon: (props) => <Ionicons name="home" size={props.size} color={props.color} /> ,

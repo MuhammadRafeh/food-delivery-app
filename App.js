@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import OnBoarding from './src/screens/OnBoarding';
 import AuthNavigator from './src/navigators/AuthNavigator';
-import MainNavigator from './src/navigators/MainNavigator';
+import AppDrawer from './src/navigators/AppDrawer';
 import { Provider, useSelector } from "react-redux";
 import store from './src/redux/store';
 
@@ -22,7 +22,7 @@ function App() {
       }
       {
         isAuth && (
-          <MainNavigator/>
+          <AppDrawer/>
         )
       }
     </NavigationContainer>
