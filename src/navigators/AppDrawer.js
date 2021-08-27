@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Dimensions, View } from 'react-native';
 import {
     createDrawerNavigator,
     DrawerContentScrollView,
@@ -12,8 +12,10 @@ import OfferPromo from '../screens/Drawer/OfferPromo';
 
 import MainNavigator from './MainNavigator';
 import theme from '../constants/theme';
+import { Ionicons, MaterialCommunityIcons, FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
-import { Ionicons, MaterialCommunityIcons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+const {width} = Dimensions.get('window');
+
 
 function CustomDrawerContent(props) {
     return (
@@ -35,13 +37,14 @@ function CustomDrawerContent(props) {
                 activeBackgroundColor={'white'}
                 inactiveTintColor={'white'}
                 icon={({ focused, size }) => {
-                    return <Ionicons
-                        name="arrow-forward-outline"
+                    return <MaterialIcons
+                        style={{left: width/5}}
+                        name="arrow-right-alt"
                         size={size}
-                        color={focused ? '#7cc' : '#ccc'}
+                        color={'white'}
                     />
                 }}
-                labelStyle={{ fontWeight: 'bold' }}
+                labelStyle={{ fontWeight: 'bold', right:width/9 }}
             />
         </>
     );
