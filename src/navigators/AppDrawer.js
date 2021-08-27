@@ -63,9 +63,9 @@ export default function AppDrawer() {
                 drawerContentStyle: { justifyContent: 'space-between' },
                 drawerStyle: { backgroundColor: theme.primary, width: '100%' },
                 drawerLabelStyle: { fontWeight: 'bold', left: -19 },
-                drawerItemStyle: { paddingLeft: 15, borderBottomColor: 'white', borderBottomWidth: .2 },
-                drawerType: 'slide',
-
+                drawerItemStyle: { paddingLeft: 15 },
+                // drawerItemStyle: { paddingLeft: 15, borderBottomColor: 'white', borderBottomWidth: .2 },
+                drawerType: 'slide'
             }}
             drawerContent={props => <CustomDrawerContent {...props} />}
         >
@@ -81,7 +81,8 @@ export default function AppDrawer() {
                 name="Profile"
                 component={Profile}
                 options={{
-                    drawerIcon: ({ color, size, focused }) => <MaterialCommunityIcons size={size} color={color} name={'face'} />
+                    drawerIcon: ({ color, size, focused }) => <MaterialCommunityIcons size={size} color={color} name={'face'} />,
+                    headerLeft: () => <MaterialIcons style={{left: 20}} size={24} color={'black'} name={'keyboard-arrow-left'} />
                 }} />
 
             <Drawer.Screen
