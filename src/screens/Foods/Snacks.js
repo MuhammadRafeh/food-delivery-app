@@ -10,7 +10,7 @@ const Snacks = props => {
             <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center', marginRight: 35 }}>
                 <Text style={{ color: theme.primary }}>see more</Text>
             </View>
-            <View style={{ flex: 3.5 }}>
+            <View style={{ flex: 4 }}>
                 <FoodItemsList foodItemsList={foodItem}/>
             </View>
         </View>
