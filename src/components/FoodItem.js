@@ -28,7 +28,8 @@ export default FoodItem;
 const styles = StyleSheet.create({
     card: {
         backgroundColor: 'white',
-        marginRight: 20,
+        marginRight: 17,
+        marginLeft: 3,
         marginVertical: 20,
         elevation: 5,
         borderRadius: 20,

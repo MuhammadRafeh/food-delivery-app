@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View } from 'react-native';
+import { View } from 'react-native';
 import {
     createDrawerNavigator,
     DrawerContentScrollView,
@@ -13,16 +13,24 @@ import OfferPromo from '../screens/Drawer/OfferPromo';
 import MainNavigator from './MainNavigator';
 import theme from '../constants/theme';
 
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
 function CustomDrawerContent(props) {
     return (
-        <DrawerContentScrollView {...props}>
-            <DrawerItemList {...props} />
+        <>
+            <DrawerContentScrollView {...props}>
+                <View style={{ flex: 1, marginTop: 75 }}>
+
+                    <DrawerItemList {...props} />
+                </View>
+            </DrawerContentScrollView>
+
             <DrawerItem
                 label={`Sign-out`} onPress={() => {
 
-                    }}
+                }}
+                style={{ bottom: 40 }}
+
                 activeTintColor={theme.primary}
                 activeBackgroundColor={'white'}
                 inactiveTintColor={'white'}
@@ -33,8 +41,9 @@ function CustomDrawerContent(props) {
                         color={focused ? '#7cc' : '#ccc'}
                     />
                 }}
+                labelStyle={{ fontWeight: 'bold' }}
             />
-        </DrawerContentScrollView>
+        </>
     );
 }
 
@@ -43,7 +52,6 @@ const Drawer = createDrawerNavigator();
 export default function AppDrawer() {
     return (
         <Drawer.Navigator
-            useLegacyImplementation={true}
             initialRouteName="Main"
             screenOptions={{
                 drawerActiveBackgroundColor: 'white',
@@ -51,19 +59,44 @@ export default function AppDrawer() {
                 drawerActiveTintColor: theme.primary,
                 drawerContentStyle: { justifyContent: 'space-between' },
                 drawerStyle: { backgroundColor: theme.primary, width: '100%' },
-                // drawerContentContainerStyle: {
-                //     backgroundColor: 'green'
-                // }
-
+                drawerLabelStyle: { fontWeight: 'bold', left: -19 },
+                drawerItemStyle: { paddingLeft: 15, borderBottomColor: 'white', borderBottomWidth: .2 },
+                drawerType: 'slide',
 
             }}
-
             drawerContent={props => <CustomDrawerContent {...props} />}
         >
-            <Drawer.Screen name="Main" component={MainNavigator} options={{ headerShown: false }} />
-            <Drawer.Screen name="Profile" component={Profile} options={{ drawerIcon: ({color, size, focused}) => <Ionicons size={size} name={'ios-man-outline'} /> }} />
-            <Drawer.Screen name="orders" component={Orders} />
-            <Drawer.Screen name="offer and promo" component={OfferPromo} />
+            <Drawer.Screen
+                name="Main"
+                component={MainNavigator}
+                options={{
+                    headerShown: false,
+                    drawerIcon: ({ color, size, focused }) => <FontAwesome5 size={size} color={color} name={'house-user'} />
+                }} />
+
+            <Drawer.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                    drawerIcon: ({ color, size, focused }) => <MaterialCommunityIcons size={size} color={color} name={'face'} />
+                }} />
+
+            <Drawer.Screen
+                name="orders"
+                component={Orders}
+                options={{
+                    drawerIcon: ({ color, size, focused }) => <Ionicons size={size} color={color} name={'cart-outline'} />
+                }} />
+
+            <Drawer.Screen
+                name="offer and promo"
+                component={OfferPromo}
+                options={{
+                    drawerIcon: ({ color, size, focused }) => <FontAwesome size={size} color={color} name={'tag'} />,
+                    drawerItemStyle: { paddingLeft: 15 }
+                }}
+            />
+
         </Drawer.Navigator>
     );
 }
