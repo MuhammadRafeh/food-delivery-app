@@ -20,20 +20,19 @@ const CartItem = () => {
                 return
             } else if (currentDrag > -100) {
                 swipe.value = currentDrag
-            } else if (e.velocityX > -100) { //Here it's mean we are placing item back to its position
-                // swipe.value = withTiming(0)
-                swipe.value = withSpring(0, {velocity: e.velocityX})
-
             } else {
                 swipe.value = withSpring(-100, {velocity: e.velocityX})
                 return
             } 
+            console.log(e.velocityX)
 
         },
         onFinish: (e) => {
-            console.log(e.velocityX)
+            // console.log(e.velocityX)
             if (e.velocityX < -100){
                 swipe.value = withSpring(-100, {velocity: e.velocityX })
+            } else if (e.velocityX > 0){
+                swipe.value = withTiming(0, {duration: 1})
             }
         }
     })
