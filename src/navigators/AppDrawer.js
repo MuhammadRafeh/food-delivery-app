@@ -14,7 +14,7 @@ import MainNavigator from './MainNavigator';
 import theme from '../constants/theme';
 import { Ionicons, MaterialCommunityIcons, FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 
 function CustomDrawerContent(props) {
@@ -38,13 +38,13 @@ function CustomDrawerContent(props) {
                 inactiveTintColor={'white'}
                 icon={({ focused, size }) => {
                     return <MaterialIcons
-                        style={{left: width/5}}
+                        style={{ left: width / 5 }}
                         name="arrow-right-alt"
                         size={size}
                         color={'white'}
                     />
                 }}
-                labelStyle={{ fontWeight: 'bold', right:width/9 }}
+                labelStyle={{ fontWeight: 'bold', right: width / 9 }}
             />
         </>
     );
@@ -82,7 +82,12 @@ export default function AppDrawer() {
                 component={Profile}
                 options={{
                     drawerIcon: ({ color, size, focused }) => <MaterialCommunityIcons size={size} color={color} name={'face'} />,
-                    headerLeft: () => <MaterialIcons style={{left: 20}} size={24} color={'black'} name={'keyboard-arrow-left'} />
+                    headerLeft: () => <MaterialIcons style={{ left: 20 }} size={28} color={'black'} name={'keyboard-arrow-left'} />,
+                    headerStatusBarHeight: 59,
+                    headerTitle: '',
+                    headerLeftContainerStyle: { paddingLeft: 15 },
+                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(245,245,248)' },
+
                 }} />
 
             <Drawer.Screen
