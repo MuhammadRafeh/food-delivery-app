@@ -7,7 +7,7 @@ import Button from '../../components/Button';
 const Profile = props => {
     return (
         <View style={styles.screen}>
-            <View style={{ marginTop: '7%', paddingHorizontal: 7 }}>
+            <View style={{ marginTop: '4%', paddingHorizontal: 7, height: '6%' }}>
                 <Text style={{ fontSize: 35, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit={true}>
                     My profile
                 </Text>
@@ -52,7 +52,7 @@ const Profile = props => {
                 </View>
             </View>
 
-            <StylishSmallCards text={'Orders'} style={{marginTop: 20}}/>
+            <StylishSmallCards text={'Orders'} style={{marginTop: '6.9%'}}/>
             <StylishSmallCards text={'Pending reviews'} />
             <StylishSmallCards text={'Faq'} />
             <StylishSmallCards text={'Help'} />
