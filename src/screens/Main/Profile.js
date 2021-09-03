@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         color: 'rgb(135,135,135)'
     },
     line: {
-        height: .3,
+        height: '.3%',
         width: '100%',
         backgroundColor: 'rgb(135,135,135)',
         marginVertical: 4
