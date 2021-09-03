@@ -102,7 +102,12 @@ export default function AppDrawer() {
                 component={OfferPromo}
                 options={{
                     drawerIcon: ({ color, size, focused }) => <FontAwesome size={size} color={color} name={'tag'} />,
-                    drawerItemStyle: { paddingLeft: 15 }
+                    headerLeft: () => <MaterialIcons style={{ left: 20 }} size={28} color={'black'} name={'keyboard-arrow-left'} />,
+                    headerStatusBarHeight: 59,
+                    headerTitle: '',
+                    headerLeftContainerStyle: { paddingLeft: 15 },
+                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(245,245,248)' },
+                    
                 }}
             />
 
