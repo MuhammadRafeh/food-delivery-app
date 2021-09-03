@@ -86,7 +86,7 @@ export default function AppDrawer() {
                     headerStatusBarHeight: 59,
                     headerTitle: '',
                     headerLeftContainerStyle: { paddingLeft: 15 },
-                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(245,245,248)' },
+                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: theme.background },
 
                 }} />
 
@@ -102,7 +102,7 @@ export default function AppDrawer() {
                     headerTitleStyle: {letterSpacing: -1.2},
                     headerLeftContainerStyle: { paddingLeft: 15},
                     headerRightContainerStyle: {paddingRight: 15}, //Used in order to center Title
-                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(245,245,248)' },
+                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: theme.background },
                 }} />
 
             <Drawer.Screen
@@ -114,7 +114,7 @@ export default function AppDrawer() {
                     headerStatusBarHeight: 59,
                     headerTitle: '',
                     headerLeftContainerStyle: { paddingLeft: 15 },
-                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(245,245,248)' },
+                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: theme.background },
                     
                 }}
             />

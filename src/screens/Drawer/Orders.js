@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import Button from '../../components/Button';
 import CartItem from '../../components/CartItem';
+import theme from '../../constants/theme';
 
 const Orders = props => {
     return (
@@ -36,7 +37,7 @@ export default Orders;
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
-        backgroundColor: 'rgb(245,245,248)',
+        backgroundColor: theme.background,
         height: '100%'
     },
     button: {
