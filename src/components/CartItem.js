@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import theme from '../constants/theme';
-import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import Animated, { Extrapolate, interpolate, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import { PanGestureHandler } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 
 const CartItem = () => {
 
@@ -21,18 +21,17 @@ const CartItem = () => {
             } else if (currentDrag > -100) {
                 swipe.value = currentDrag
             } else {
-                swipe.value = withSpring(-100, {velocity: e.velocityX})
+                swipe.value = withSpring(-100, { velocity: e.velocityX })
                 return
-            } 
+            }
             console.log(e.velocityX)
 
         },
         onFinish: (e) => {
-            // console.log(e.velocityX)
-            if (e.velocityX < -100){
-                swipe.value = withSpring(-100, {velocity: e.velocityX })
-            } else if (e.velocityX > 0){
-                swipe.value = withTiming(0, {duration: 1})
+            if (e.velocityX < -100) {
+                swipe.value = withSpring(-100, { velocity: e.velocityX })
+            } else if (e.velocityX > 0) {
+                swipe.value = withTiming(0, { duration: 1 })
             }
         }
     })
@@ -45,16 +44,24 @@ const CartItem = () => {
         }
     })
 
+    const opacityStyle = useAnimatedStyle(() => {
+        const visibility = interpolate(swipe.value, [-1, -99], [0, 1], Extrapolate.CLAMP);
+        return {
+            opacity: visibility
+        }
+    })
+
+
     return (
         <View>
-            <View style={{ position: 'absolute', bottom: 33, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', right: 20, height: 35 }}>
-                <View style={{backgroundColor: 'rgb(223,44,44)', height: 25}}>
-
-                    <Text>
-                        <Ionicons name={'ios-heart-outline'} size={24} color={'white'}/>
-                    </Text>
+            <Animated.View style={[styles.hiddenButtonContainer, opacityStyle]}>
+                <View style={styles.iconContainer}>
+                    <Ionicons name={'ios-heart-outline'} size={22} color={'white'} />
                 </View>
-            </View>
+                <View style={[styles.iconContainer, {marginLeft: 4}]}>
+                    <MaterialIcons name={'delete-outline'} size={22} color={'white'} />
+                </View>
+            </Animated.View>
             <PanGestureHandler onGestureEvent={handleGestureEvent}>
                 <Animated.View style={[styles.item, style]}>
                     <View style={{ flex: 1 }}>
@@ -109,6 +116,23 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         flexDirection: 'row',
         justifyContent: 'space-around',
+        alignItems: 'center'
+    },
+    hiddenButtonContainer: {
+        position: 'absolute', 
+        bottom: 33, 
+        flexDirection: 'row', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        right: 20, 
+        height: 35
+    },
+    iconContainer: {
+        backgroundColor: 'rgb(223,44,44)',
+        height: 30,
+        width: 30,
+        borderRadius: 15,
+        justifyContent: 'center',
         alignItems: 'center'
     }
 })
