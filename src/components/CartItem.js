@@ -18,7 +18,7 @@ const CartItem = () => {
             if (currentDrag > 0) {
                 swipe.value = 0
                 return
-            } else if (currentDrag > -100) {
+            } else if (currentDrag > -100) { //Here card moving with panGestureHandler
                 swipe.value = currentDrag
             } else {
                 swipe.value = withSpring(-100, { velocity: e.velocityX })
@@ -28,12 +28,16 @@ const CartItem = () => {
 
         },
         onFinish: (e) => {
-            if (e.velocityX < -100) {
+            if (e.velocityX < -100 && e.velocityX < 0) { //going towards left for actions
                 swipe.value = withSpring(-100, { velocity: e.velocityX })
-            } else if (e.velocityX > 0) {
+            } else if (e.velocityX > 0) { // going back to original position
                 swipe.value = withTiming(0, { duration: 1 })
+            } else if (swipe.value > -50) {
+                swipe.value = withTiming(0, { duration: 1 })
+            } else if (swipe.value < -50) {
+                swipe.value = withSpring(-100, { velocity: e.velocityX })
             }
-        }
+        },
     })
 
     const style = useAnimatedStyle(() => {
