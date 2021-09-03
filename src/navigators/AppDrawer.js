@@ -94,7 +94,15 @@ export default function AppDrawer() {
                 name="orders"
                 component={Orders}
                 options={{
-                    drawerIcon: ({ color, size, focused }) => <Ionicons size={size} color={color} name={'cart-outline'} />
+                    drawerIcon: ({ color, size, focused }) => <Ionicons size={size} color={color} name={'cart-outline'} />,
+                    headerLeft: () => <MaterialIcons style={{ left: 20 }} size={28} color={'black'} name={'keyboard-arrow-left'} />,
+                    headerStatusBarHeight: 59,
+                    headerTitle: 'Cart',
+                    headerTitleAlign: 'center',
+                    headerTitleStyle: {letterSpacing: -1.2},
+                    headerLeftContainerStyle: { paddingLeft: 15},
+                    headerRightContainerStyle: {paddingRight: 15}, //Used in order to center Title
+                    headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(245,245,248)' },
                 }} />
 
             <Drawer.Screen
