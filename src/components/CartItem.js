@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import theme from '../constants/theme';
-import Animated, { Extrapolate, interpolate, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import Animated, { Extrapolate, interpolate, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withDecay, withSequence, withSpring, withTiming } from 'react-native-reanimated';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 
@@ -30,7 +30,7 @@ const CartItem = () => {
         onFinish: (e) => {
             if (e.velocityX < -100 && e.velocityX < 0) { //going towards left for actions
                 swipe.value = withSpring(-100, { velocity: e.velocityX })
-            } else if (e.velocityX > 0) { // going back to original position
+            } else if (e.velocityX > 20) { // going back to original position
                 swipe.value = withTiming(0, { duration: 1 })
             } else if (swipe.value > -50) {
                 swipe.value = withTiming(0, { duration: 1 })

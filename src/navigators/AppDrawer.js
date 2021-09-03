@@ -63,7 +63,7 @@ export default function AppDrawer() {
                 drawerContentStyle: { justifyContent: 'space-between' },
                 drawerStyle: { backgroundColor: theme.primary, width: '100%' },
                 drawerLabelStyle: { fontWeight: 'bold', left: -19 },
-                drawerItemStyle: { paddingLeft: 15 },
+                drawerItemStyle: { marginLeft: 26 },
                 // drawerItemStyle: { paddingLeft: 15, borderBottomColor: 'white', borderBottomWidth: .2 },
                 drawerType: 'slide'
             }}

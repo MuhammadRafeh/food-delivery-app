@@ -9,7 +9,7 @@ const Orders = props => {
         <View style={styles.screen}>
             <View style={{marginBottom: '3%', marginTop: '4%', paddingHorizontal: 36}}>
                 <Text style={{textAlign: 'center', letterSpacing: -0.9, color: '#000000', fontSize: 12}}>
-                    swipe on an item to delete
+                    swipe on an item for actions
                 </Text>
             </View>
             <View style={{height: '80%'}}>
