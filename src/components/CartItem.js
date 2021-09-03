@@ -47,7 +47,10 @@ const CartItem = () => {
     const opacityStyle = useAnimatedStyle(() => {
         const visibility = interpolate(swipe.value, [-1, -99], [0, 1], Extrapolate.CLAMP);
         return {
-            opacity: visibility
+            opacity: visibility,
+            transform: [
+                { scale: visibility }
+            ]
         }
     })
 
@@ -58,7 +61,7 @@ const CartItem = () => {
                 <View style={styles.iconContainer}>
                     <Ionicons name={'ios-heart-outline'} size={22} color={'white'} />
                 </View>
-                <View style={[styles.iconContainer, {marginLeft: 4}]}>
+                <View style={[styles.iconContainer, { marginLeft: 4 }]}>
                     <MaterialIcons name={'delete-outline'} size={22} color={'white'} />
                 </View>
             </Animated.View>
@@ -119,12 +122,12 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     hiddenButtonContainer: {
-        position: 'absolute', 
-        bottom: 33, 
-        flexDirection: 'row', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        right: 20, 
+        position: 'absolute',
+        bottom: 33,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        right: 20,
         height: 35
     },
     iconContainer: {
