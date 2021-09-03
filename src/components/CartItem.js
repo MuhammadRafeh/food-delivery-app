@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         flexDirection: 'row',
         borderRadius: 15,
-        height: 85
+        height: 85,
+        marginVertical: 8
     },
     counter: {
         position: 'absolute',
