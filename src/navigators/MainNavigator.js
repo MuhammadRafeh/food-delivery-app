@@ -8,7 +8,7 @@ import Recents from '../screens/Main/Recents'
 import { Ionicons, Feather } from '@expo/vector-icons';
 import theme from '../constants/theme';
 const Tab = createBottomTabNavigator();
-<Ionicons name="ios-menu-sharp" size={32} color="green" />
+
 function MyTabs() {
   return (
     <Tab.Navigator
@@ -21,7 +21,7 @@ function MyTabs() {
           shadowOffset: {
             width: 0, height: 0 // for iOS
           },
-          height: 70,
+          height: 70
         },
         tabBarShowLabel: false,
         headerTitle: '',
@@ -31,7 +31,7 @@ function MyTabs() {
         tabBarActiveTintColor: theme.primary,
         tabBarInactiveTintColor: theme.secondary,
         headerStyle: { borderBottomWidth: 0, elevation: 0, backgroundColor: 'rgb(242,242,242)' },
-        tabBarHideOnKeyboard: true,
+        tabBarHideOnKeyboard: true
       }}
 
     >
